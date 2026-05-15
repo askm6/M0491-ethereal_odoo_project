@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Herencia del formulario de contacto: añadimos pestaña "Redes Sociales" -->
+    <record id="view_partner_form_rrss" model="ir.ui.view">
+        <field name="name">res.partner.form.rrss</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Insertamos una nueva pestaña al final del notebook -->
+            <xpath expr="//notebook" position="inside">
+                <page string="Redes Sociales" name="rrss">
+                    <group>
+                        <group string="Perfiles">
+                            <label for="linkedin_url"/>
+                            <div class="o_row">
+                                <field name="linkedin_url"
+                                       placeholder="https://www.linkedin.com/in/..."
+                                       widget="url"/>
+                            </div>
+                            <label for="instagram_url"/>
+                            <div class="o_row">
+                                <field name="instagram_url"
+                                       placeholder="https://www.instagram.com/..."
+                                       widget="url"/>
+                            </div>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Añadimos los campos también en la vista de lista (tree) por si se quieren ver -->
+    <record id="view_partner_tree_rrss" model="ir.ui.view">
+        <field name="name">res.partner.tree.rrss</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <field name="linkedin_url" optional="hide"/>
+                <field name="instagram_url" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
