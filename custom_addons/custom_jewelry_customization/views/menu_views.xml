@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem
+        id="menu_custom_jewelry_customization_root"
+        name="Joyería personalizada"
+        sequence="20"/>
+
+    <menuitem
+        id="menu_custom_jewelry_customization_requests"
+        name="Solicitudes de personalización"
+        parent="menu_custom_jewelry_customization_root"
+        action="action_custom_jewelry_customization"
+        sequence="10"/>
+</odoo>

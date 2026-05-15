@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_custom_jewelry_customization_tree" model="ir.ui.view">
+        <field name="name">custom.jewelry.customization.tree</field>
+        <field name="model">custom.jewelry.customization</field>
+        <field name="arch" type="xml">
+            <tree string="Personalización de joyas">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="request_date"/>
+                <field name="customization_type"/>
+                <field name="material"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_custom_jewelry_customization_form" model="ir.ui.view">
+        <field name="name">custom.jewelry.customization.form</field>
+        <field name="model">custom.jewelry.customization</field>
+        <field name="arch" type="xml">
+            <form string="Solicitud de personalización de joya">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="product_id"/>
+                            <field name="request_date"/>
+                        </group>
+                        <group>
+                            <field name="customization_type"/>
+                            <field name="material"/>
+                            <field name="size_or_measure"/>
+                            <field name="state"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_custom_jewelry_customization" model="ir.actions.act_window">
+        <field name="name">Personalización de joyas</field>
+        <field name="res_model">custom.jewelry.customization</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
