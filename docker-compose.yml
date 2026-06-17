@@ -10,6 +10,7 @@ services:
       PORT: ${ODOO_DB_PORT}
       USER: ${ODOO_DB_USER}
       PASSWORD: ${ODOO_DB_PASSWORD}
+      ODOO_PUBLIC_URL: ${ODOO_PUBLIC_URL}
     volumes:
       - ./custom_addons:/mnt/extra-addons
       - ./config:/etc/odoo
